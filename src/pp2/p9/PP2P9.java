@@ -15,7 +15,7 @@ public class PP2P9 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Ocupe muchas variables en este codigo
         int c ,p1, p2, p3, p4;
         c = pedirCifra();
         p1 = calcularCifra1(c);
@@ -33,6 +33,7 @@ public class PP2P9 {
     }
     public static int calcularCifra1 (int c){
         int p,f=0;
+        //solo aceptara cantidades de 4 digitos
         if(c>999 && c<9999){
         p = c/1000;
         f = p *1000;
@@ -42,7 +43,8 @@ public class PP2P9 {
         return f;
     }
     public static int calcularCifra2(int c){
-        int p1,f1,p2,f2,f3=0;
+        int p1,p2,f2,f3=0;
+        //como solo se queda con numeros enteros, dividirlo entre 100 y multiplicarlo por 100 elimina los demas numeros
         if(c>999 && c<9999){
         p1 = c/100;
         p2 = (c/1000)*10;
@@ -55,6 +57,7 @@ public class PP2P9 {
         int p1,p2, p3, f1, f2=0,f3;
         if(c>999 && c<9999){
         p1 = (c / 1000)*100;
+        //el problema fue que ahora tengo que restarle los demás numeros para obtener el entero que quiero
         p2 = ((c / 100)*10)-p1;
         p3 = c / 10;
         f1 = p3 - (p1+p2);
@@ -68,11 +71,13 @@ public class PP2P9 {
         p1 = (c / 1000)*1000;
         p2 = ((c / 100)*100)-((c / 1000)*1000);
         p3 = ((c / 10)*10) -((c / 100)*100);
+        //resultando en una ecuación muy grande
         f1 = c-(p1+p2+p3);
         }
         return f1;
     }
     public static void mostrar(int c, int p1, int p2, int p3, int p4){
+        //pero que finalmente cumple con el objetivo del programa
         System.out.println("La cantidad " +c +" es igual a la suma de " +p1 +" + " +p2 +" + " +p3 +" + " +p4);
     }
 }
