@@ -32,34 +32,44 @@ public class PP2P9 {
         return c;
     }
     public static int calcularCifra1 (int c){
-        int p,f;
+        int p,f=0;
+        if(c>999 && c<9999){
         p = c/1000;
         f = p *1000;
+        }else{
+            System.out.println("La cifra no es 4 digitos, reinice el prgrama.");
+        }
         return f;
     }
     public static int calcularCifra2(int c){
-        int p1,f1,p2,f2,f3;
+        int p1,f1,p2,f2,f3=0;
+        if(c>999 && c<9999){
         p1 = c/100;
         p2 = (c/1000)*10;
         f2 = p1-p2;
         f3 = f2*100;
+        }
         return f3;
     }
     public static int calcularCifra3(int c){
-        int p1,p2, p3, f1, f2,f3;
+        int p1,p2, p3, f1, f2=0,f3;
+        if(c>999 && c<9999){
         p1 = (c / 1000)*100;
         p2 = ((c / 100)*10)-p1;
         p3 = c / 10;
         f1 = p3 - (p1+p2);
         f2 = f1 * 100;
-        return p1;
+        }
+        return f2;
     }
     public static int calcularCifra4 (int c){
-        int p1,p2,p3,f1,f2,f3;
+        int p1,p2,p3,f1 = 0,f2,f3;
+        if(c>999 && c<9999){
         p1 = (c / 1000)*1000;
         p2 = ((c / 100)*100)-((c / 1000)*1000);
         p3 = ((c / 10)*10) -((c / 100)*100);
         f1 = c-(p1+p2+p3);
+        }
         return f1;
     }
     public static void mostrar(int c, int p1, int p2, int p3, int p4){
